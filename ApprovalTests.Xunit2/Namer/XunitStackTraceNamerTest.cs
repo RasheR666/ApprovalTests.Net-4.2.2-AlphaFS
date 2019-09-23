@@ -1,3 +1,4 @@
+using Alphaleonis.Win32.Filesystem;
 using ApprovalUtilities.Utilities;
 using Xunit;
 
@@ -7,7 +8,6 @@ namespace ApprovalTests.Xunit2.Namer
     using Namers.StackTraceParsers;
     using System;
     using System.Diagnostics;
-    using System.IO;
     using System.Threading.Tasks;
     using Xunit;
 

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers

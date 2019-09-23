@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalUtilities.CallStack;
 using ApprovalUtilities.Utilities;
 
@@ -37,7 +37,7 @@ namespace ApprovalTests.Maintenance
         private static List<FileInfo> FindAbandonedFiles(string path, Assembly assembly)
         {
             var searchPattern = "*.approved.*";
-            var approvedFile = Directory.EnumerateFiles(path, searchPattern, SearchOption.AllDirectories);
+            var approvedFile = Directory.EnumerateFiles(path, searchPattern, System.IO.SearchOption.AllDirectories);
             return approvedFile.Select(f => new FileInfo(f))
                 .Where(f => IsAbandoned(f, assembly))
                 .ToList();

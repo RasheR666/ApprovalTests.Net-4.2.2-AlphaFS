@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalUtilities.Persistence;
 
 namespace ApprovalTests.Tests.Persistence
@@ -18,7 +18,7 @@ namespace ApprovalTests.Tests.Persistence
         {
             using (var fileStream = file.OpenWrite())
             {
-                using (var writer = new StreamWriter(fileStream))
+                using (var writer = new System.IO.StreamWriter(fileStream))
                 {
                     await writer.WriteAsync(objectToBeSaved);
                     return objectToBeSaved;

@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using Alphaleonis.Win32.Filesystem;
 using ApprovalUtilities.Persistence;
 
 namespace ApprovalTests.Tests.Persistence

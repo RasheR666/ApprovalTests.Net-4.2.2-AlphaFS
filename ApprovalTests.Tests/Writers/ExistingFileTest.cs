@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Reporters;
 using ApprovalTests.Writers;
 using ApprovalUtilities.Utilities;

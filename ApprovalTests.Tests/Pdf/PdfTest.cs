@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Linq;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Reporters;
 using ApprovalTests.Scrubber;
 using ApprovalUtilities.Utilities;
@@ -83,7 +83,7 @@ startxref
         public void TestPdf_Replacements()
         {
             var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
-            using (var fileStream = File.Open(pdfOriginal, FileMode.Open))
+            using (var fileStream = File.Open(pdfOriginal, System.IO.FileMode.Open))
             {
                 var replacements = PdfScrubber.FindReplacements(fileStream);
                 Approvals.VerifyAll("Replacements", replacements, r => r.ToString());

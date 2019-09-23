@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers
@@ -86,7 +86,7 @@ namespace ApprovalTests.Namers
         {
             var search = $"{ClassName}.{MethodName}.*.approved.{Extension}";
 
-            return System.IO.Directory.GetFiles(Directory, search).Where(f => f != GetFullPath).Select(f => new FileInfo(f)).ToList();
+            return Alphaleonis.Win32.Filesystem.Directory.GetFiles(Directory, search).Where(f => f != GetFullPath).Select(f => new FileInfo(f)).ToList();
         }
 
         public override string ToString()

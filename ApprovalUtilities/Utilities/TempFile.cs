@@ -1,5 +1,5 @@
 ﻿using System;
-using System.IO;
+using Alphaleonis.Win32.Filesystem;
 
 namespace ApprovalUtilities.Utilities
 {
@@ -31,7 +31,7 @@ namespace ApprovalUtilities.Utilities
 
         public void WriteAllText(string text)
         {
-            System.IO.File.WriteAllText(File.FullName, text);
+            Alphaleonis.Win32.Filesystem.File.WriteAllText(File.FullName, text);
         }
     }
 }

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Approvers;
 using ApprovalTests.Core;
 using ApprovalTests.Html;

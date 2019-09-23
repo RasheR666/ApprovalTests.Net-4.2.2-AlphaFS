@@ -1,6 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Reflection;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
 

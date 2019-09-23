@@ -1,4 +1,4 @@
-using System.IO;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Namers;
 using ApprovalTests.StackTraceParsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

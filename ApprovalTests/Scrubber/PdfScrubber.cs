@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using Alphaleonis.Win32.Filesystem;
 
 namespace ApprovalTests.Scrubber
 {
@@ -11,7 +11,7 @@ namespace ApprovalTests.Scrubber
     {
         public static void ScrubPdf(string pdfFilePath)
         {
-            using (var fileStream = File.Open(pdfFilePath, FileMode.Open))
+            using (var fileStream = File.Open(pdfFilePath, System.IO.FileMode.Open))
             {
                 var replacements = FindReplacements(fileStream);
                 WriteReplacements(fileStream, replacements);
@@ -29,7 +29,7 @@ namespace ApprovalTests.Scrubber
             }
         }
 
-        static void WriteReplacements(FileStream fileStream, IEnumerable<Replacement> replacements)
+        static void WriteReplacements(System.IO.FileStream fileStream, IEnumerable<Replacement> replacements)
         {
             foreach (var replacement in replacements)
             {
@@ -40,7 +40,7 @@ namespace ApprovalTests.Scrubber
             }
         }
 
-        public static IEnumerable<Replacement> FindReplacements(FileStream fileStream)
+        public static IEnumerable<Replacement> FindReplacements(System.IO.FileStream fileStream)
         {
             // Number of bytes to read from the file at a time. This should exceed the max length of the patterns to search for.
             var readSize = 4096;

@@ -1,8 +1,8 @@
 using System;
-using System.IO;
 using System.Runtime.CompilerServices;
 using NUnit.Framework;
 using System.Linq;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Namers.StackTraceParsers;
 
 [SetUpFixture]
