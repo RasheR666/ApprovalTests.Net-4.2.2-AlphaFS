@@ -75,7 +75,7 @@ namespace ApprovalTests
         private static byte[] ReadBytes(string file, int length)
         {
             byte[] buffer;
-            using (var fileStream = new System.IO.FileStream(file, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+            using (var fileStream = File.Open(file, System.IO.FileMode.Open, System.IO.FileAccess.Read))
             {
                 var offset = 0;
                 var fileLength = fileStream.Length;

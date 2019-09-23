@@ -23,14 +23,17 @@ namespace ApprovalUtilities.Utilities
 
         public static Encoding GetEncodingFor(string file)
         {
-            using (var sr = new System.IO.StreamReader(file, true))
+            using (var fs = File.Open(file, System.IO.FileMode.Open, System.IO.FileAccess.Read))
             {
-                for (var i = 0; i < 4 && sr.Peek() >= 0; i++)
+                using (var sr = new System.IO.StreamReader(fs, true))
                 {
-                    sr.Read();
-                }
+                    for (var i = 0; i < 4 && sr.Peek() >= 0; i++)
+                    {
+                        sr.Read();
+                    }
 
-                return sr.CurrentEncoding;
+                    return sr.CurrentEncoding;
+                }
             }
         }
     }
